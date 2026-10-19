@@ -36,7 +36,7 @@ public class PlayerPickup : MonoBehaviour
         targetDoor = FindClosestDoor();
         targetNPC = FindClosestNPC();
 
-        if (targetItem == null) return;
+        ShowGuide();
 
         Keyboard keyboard = Keyboard.current;
 
@@ -46,7 +46,7 @@ public class PlayerPickup : MonoBehaviour
 
         if (keyboard.eKey.wasPressedThisFrame)
         {
-            StartCoroutine(PickupAnimation());
+            Interact();
         }
     }
     private void Interact()                                                 //인터렉션 함수
